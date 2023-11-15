@@ -1,14 +1,15 @@
-// import { Routes,Route } from "react-router-dom";
-
+import { Routes, Route } from "react-router-dom";
+import { Main, Login } from "./containers";
 
 const App = () => {
-  return (
-    <div>
-      <h1 className="min-h-screen w-screen h-auto flex flex-col items-center justify-center">HELLO WORLD</h1>
-
-      
-    </div>
-  )
-}
+	return (
+		<div className="min-h-screen w-screen h-auto flex flex-col items-center justify-center">
+			<Routes>
+				<Route path="/*" element={<Main />} />
+				<Route path="/login" element={<Login />} />
+			</Routes>
+		</div>
+	);
+};
 
 export default App;
