@@ -1,6 +1,10 @@
+import { useState } from "react";
+import { LoginInput } from "../Components";
 import { logoBg, Logo } from "../assets";
 
 const Login = () => {
+	const [userEmail, setuserEmail] = useState("")
+	const [isSignUp, setisSignUp] = useState("false");
 	return (
 		<div className="w-screen h-screen overflow-hidden relative flex">
 			{/* background image */}
@@ -30,8 +34,24 @@ const Login = () => {
 					SignIn with the following
 				</p>
 				{/* input section*/}
-				<div className="flex flex-col justify-center items-center gap-6 px-4 md:px-12 py-4">
-
+				<div className="flex flex-col justify-center items-center gap-6 px-4 md:px-12 py-4 w-full">
+					<LoginInput
+						type="email"
+						placeholder={"Email Here"}
+						userEmail={userEmail}
+						inputStateFunction={setuserEmail}
+						isSignUp={isSignUp}
+						icon=""
+						label="Email"
+					/>
+					<LoginInput
+						type="email"
+						placeholder="Email"
+						userEmail={userEmail}
+						inputStateFunction={setuserEmail}
+						isSignUp={isSignUp}
+						icon=""
+					/>
 				</div>
 			</div>
 		</div>
