@@ -12,7 +12,7 @@ const Login = () => {
 			{/* content box */}
 			<div
 				className="flex flex-col h-full items-center w-[80%] md:w-[508px] lg:w-[408px] z-10
-			backdrop-blur-md p-4 px-4 py-12
+			backdrop-blur-md p-4 px-4 py-12 gap-6
 			bg-cardOverlay"
 			>
 				{/* logo */}
@@ -22,6 +22,9 @@ const Login = () => {
 						EatOut
 					</p>
 				</div>
+				{/* welcome text */}
+				<p className="text-3xl font-semibold text-headingColor ">Welcome Back</p>
+				<p className="text-textColor text-xl -mt-6">SignIn with the following</p>
 			</div>
 		</div>
 	);
