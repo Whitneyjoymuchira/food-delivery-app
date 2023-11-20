@@ -23,8 +23,16 @@ const Login = () => {
 					</p>
 				</div>
 				{/* welcome text */}
-				<p className="text-3xl font-semibold text-headingColor ">Welcome Back</p>
-				<p className="text-textColor text-xl -mt-6">SignIn with the following</p>
+				<p className="text-3xl font-semibold text-headingColor ">
+					Welcome Back
+				</p>
+				<p className="text-textColor text-xl -mt-6">
+					SignIn with the following
+				</p>
+				{/* input section*/}
+				<div className="flex flex-col justify-center items-center gap-6 px-4 md:px-12 py-4">
+
+				</div>
 			</div>
 		</div>
 	);
