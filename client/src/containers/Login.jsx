@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { LoginInput } from "../Components";
 import { logoBg, Logo } from "../assets";
+import {FaEnvelope, FaLock} from "../assets/icons"
 
 const Login = () => {
 	const [userEmail, setuserEmail] = useState("")
@@ -38,20 +39,20 @@ const Login = () => {
 					<LoginInput
 						type="email"
 						placeholder={"Email Here"}
-						userEmail={userEmail}
+						inputState={userEmail}
 						inputStateFunction={setuserEmail}
 						isSignUp={isSignUp}
-						icon=""
+						icon={<FaEnvelope className="text-3xl text-textColor"/>}
 						label="Email"
 					/>
-					<LoginInput
-						type="email"
-						placeholder="Email"
+					{/* <LoginInput
+						type="password"
+						placeholder="Enter Password"
 						userEmail={userEmail}
 						inputStateFunction={setuserEmail}
 						isSignUp={isSignUp}
-						icon=""
-					/>
+						icon={< FaLock/>}
+					/> */}
 				</div>
 			</div>
 		</div>
