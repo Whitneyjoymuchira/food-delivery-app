@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { LoginInput } from "../Components";
 import { logoBg, Logo } from "../assets";
-import {FaEnvelope, FaLock} from "../assets/icons"
+import { FaEnvelope, FaLock } from "../assets/icons";
+import {motion}from "framer-motion"
 
 const Login = () => {
-	const [userEmail, setuserEmail] = useState("")
+	const [userEmail, setuserEmail] = useState("");
 	const [isSignUp, setisSignUp] = useState(false);
 	const [userPassword, setuserPassword] = useState("");
-	const [confirmPassword, setconfirmPassword] = useState("")
+	const [confirmPassword, setconfirmPassword] = useState("");
 	return (
 		<div className="w-screen h-screen overflow-hidden relative flex">
 			{/* background image */}
@@ -64,6 +65,11 @@ const Login = () => {
 							isSignUp={isSignUp}
 							icon={<FaLock className="text-xl text-textColor" />}
 						/>
+					)}
+					{!isSignUp ? (
+						<p> Don`t have an account?<motion.button/></p>
+					) : (
+						<p>Login</p>
 					)}
 				</div>
 			</div>
