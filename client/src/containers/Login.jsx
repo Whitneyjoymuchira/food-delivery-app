@@ -5,7 +5,9 @@ import {FaEnvelope, FaLock} from "../assets/icons"
 
 const Login = () => {
 	const [userEmail, setuserEmail] = useState("")
-	const [isSignUp, setisSignUp] = useState("false");
+	const [isSignUp, setisSignUp] = useState(false);
+	const [userPassword, setuserPassword] = useState("");
+	const [confirmPassword, setconfirmPassword] = useState("")
 	return (
 		<div className="w-screen h-screen overflow-hidden relative flex">
 			{/* background image */}
@@ -42,17 +44,27 @@ const Login = () => {
 						inputState={userEmail}
 						inputStateFunction={setuserEmail}
 						isSignUp={isSignUp}
-						icon={<FaEnvelope className="text-3xl text-textColor"/>}
+						icon={<FaEnvelope className="text-xl text-textColor" />}
 						label="Email"
 					/>
-					{/* <LoginInput
+					<LoginInput
 						type="password"
-						placeholder="Enter Password"
-						userEmail={userEmail}
-						inputStateFunction={setuserEmail}
+						placeholder="password"
+						inputState={userPassword}
+						inputStateFunction={setuserPassword}
 						isSignUp={isSignUp}
-						icon={< FaLock/>}
-					/> */}
+						icon={<FaLock className="text-xl text-textColor" />}
+					/>
+					{isSignUp && (
+						<LoginInput
+							type="password"
+							placeholder=" confirm password"
+							inputState={confirmPassword}
+							inputStateFunction={setconfirmPassword}
+							isSignUp={isSignUp}
+							icon={<FaLock className="text-xl text-textColor" />}
+						/>
+					)}
 				</div>
 			</div>
 		</div>

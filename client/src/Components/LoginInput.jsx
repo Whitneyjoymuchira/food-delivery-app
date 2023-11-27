@@ -11,7 +11,9 @@ const LoginInput = ({
 	const [isfocus, setIsFocus] = useState(false)
 	return (
 		<div
-			className={`flex justify-center items-center gap-4 backdrop-blur-md rounded-md w-full px-4 py-2 bg-cardOverlay ${isfocus?"shadow-md shadow-red-400": "shadow-none"}`}
+			className={`flex justify-center items-center gap-4 backdrop-blur-md rounded-md w-full px-4 py-2 bg-cardOverlay ${
+				isfocus ? "shadow-md shadow-red-400" : "shadow-none"
+			}`}
 		>
 			{icon}
 			<input
@@ -19,11 +21,10 @@ const LoginInput = ({
 				placeholder={placeholder}
 				className="w-full h-full bg-transparent text-headingColor outline-none  text-lg font-semibold border-none"
 				value={inputState}
-				onChange={(e)=>inputStateFunction(e.target.value)}
-				onFocus={()=>setIsFocus(true)}
-				onBlur={()=>setIsFocus(false)}
+				onChange={(e) => inputStateFunction(e.target.value)}
+				onFocus={() => setIsFocus(true)}
+				onBlur={() => setIsFocus(false)}
 			/>
-		
 		</div>
 	);
 };
