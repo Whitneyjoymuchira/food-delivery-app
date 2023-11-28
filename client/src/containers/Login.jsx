@@ -71,7 +71,12 @@ const Login = () => {
 						<p>
 							{" "}
 							Don`t have an account?
-							<motion.button {...buttonClick}>Create one</motion.button>
+							<motion.button
+								{...buttonClick}
+								className="text-red-400 cursor-pointer bg-transparent underline"
+							>
+								Create one
+							</motion.button>
 						</p>
 					) : (
 						<p>Login</p>
