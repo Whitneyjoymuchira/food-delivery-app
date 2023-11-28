@@ -2,7 +2,8 @@ import { useState } from "react";
 import { LoginInput } from "../Components";
 import { logoBg, Logo } from "../assets";
 import { FaEnvelope, FaLock } from "../assets/icons";
-import {motion}from "framer-motion"
+import { motion } from "framer-motion";
+import { buttonClick } from "../Animations";
 
 const Login = () => {
 	const [userEmail, setuserEmail] = useState("");
@@ -67,7 +68,11 @@ const Login = () => {
 						/>
 					)}
 					{!isSignUp ? (
-						<p> Don`t have an account?<motion.button/></p>
+						<p>
+							{" "}
+							Don`t have an account?
+							<motion.button {...buttonClick}>Create one</motion.button>
+						</p>
 					) : (
 						<p>Login</p>
 					)}
