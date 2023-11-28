@@ -35,8 +35,9 @@ const Login = () => {
 				<p className="text-3xl font-semibold text-headingColor ">
 					Welcome Back
 				</p>
+
 				<p className="text-textColor text-xl -mt-6">
-					SignIn with the following
+					{isSignUp ? "Signup" : "Sign in "} with the following
 				</p>
 				{/* input section*/}
 				<div className="flex flex-col justify-center items-center gap-6 px-4 md:px-12 py-4 w-full">
@@ -74,13 +75,31 @@ const Login = () => {
 							<motion.button
 								{...buttonClick}
 								className="text-red-400 cursor-pointer bg-transparent underline"
+								onClick={() => setisSignUp(true)}
 							>
 								Create one
 							</motion.button>
 						</p>
 					) : (
-						<p>Login</p>
+						<p>
+							Already have an account?
+							<motion.button
+								{...buttonClick}
+								className="text-red-400 cursor-pointer bg-transparent underline"
+								onClick={() => setisSignUp(false)}
+							>
+								Login
+							</motion.button>
+						</p>
 					)}
+					{/* button section */}
+					{/* Replace static transitions with motion animations to improve the user */}
+					<motion.button
+						{...buttonClick}
+						className="w-full bg-red-400 text-white px-4 py-2 cursor-pointer rounded-md"
+					>
+						{isSignUp ? "SignUp" : "Sign in"}
+					</motion.button>
 				</div>
 			</div>
 		</div>

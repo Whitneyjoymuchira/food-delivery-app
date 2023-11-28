@@ -1,5 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
+import { motion } from "framer-motion";
+import { animatedDiv } from "../Animations";
 const LoginInput = ({
 	placeholder,
 	icon,
@@ -8,9 +10,10 @@ const LoginInput = ({
 	inputStateFunction,
 	isSignUp,
 }) => {
-	const [isfocus, setIsFocus] = useState(false)
+	const [isfocus, setIsFocus] = useState(false);
 	return (
-		<div
+		<motion.div
+			{...animatedDiv}
 			className={`flex justify-center items-center gap-4 backdrop-blur-md rounded-md w-full px-4 py-2 bg-cardOverlay ${
 				isfocus ? "shadow-md shadow-red-400" : "shadow-none"
 			}`}
@@ -25,7 +28,7 @@ const LoginInput = ({
 				onFocus={() => setIsFocus(true)}
 				onBlur={() => setIsFocus(false)}
 			/>
-		</div>
+		</motion.div>
 	);
 };
 
