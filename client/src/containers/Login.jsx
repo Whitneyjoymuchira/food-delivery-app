@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { LoginInput } from "../Components";
 import { logoBg, Logo } from "../assets";
-import { FaEnvelope, FaLock } from "../assets/icons";
+import { FaEnvelope, FaLock, FcGoogle } from "../assets/icons";
 import { motion } from "framer-motion";
 import { buttonClick } from "../Animations";
 
@@ -96,11 +96,25 @@ const Login = () => {
 					{/* Replace static transitions with motion animations to improve the user */}
 					<motion.button
 						{...buttonClick}
-						className="w-full bg-red-400 text-white px-4 py-2 cursor-pointer rounded-md"
+						className="w-full text-white text-lg px-4 py-2 cursor-pointer rounded-md capitalize bg-red-400 hover:bg-buttonHover transition-all duration-200"
 					>
-						{isSignUp ? "SignUp" : "Sign in"}
+						{isSignUp ? "Sign Up" : "Sign in"}
 					</motion.button>
 				</div>
+				<div className="flex items-center justify-between gap-16">
+					<div className="w-24 h-[1px] bg-white rounded-md"></div>
+					<p className="">or</p>
+					<div className="w-24 h-[1px] bg-white rounded-md"></div>
+				</div>
+				<motion.div
+					{...buttonClick}
+					className="flex items-center justify-center px-20 py-2 bg-cardOverlay backdrop-blur-md rounded-3xl gap-4"
+				>
+					<FcGoogle className="text-3xl" />
+					<p className="text-base capitalize text-headingColor">
+						Signin with google
+					</p>
+				</motion.div>
 			</div>
 		</div>
 	);
