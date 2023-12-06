@@ -4,12 +4,28 @@ import { logoBg, Logo } from "../assets";
 import { FaEnvelope, FaLock, FcGoogle } from "../assets/icons";
 import { motion } from "framer-motion";
 import { buttonClick } from "../Animations";
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { app } from "../config/firebase.config";
 
 const Login = () => {
 	const [userEmail, setuserEmail] = useState("");
 	const [isSignUp, setisSignUp] = useState(false);
 	const [userPassword, setuserPassword] = useState("");
 	const [confirmPassword, setconfirmPassword] = useState("");
+
+	const firebaseAuth = getAuth(app);
+	const provider = new GoogleAuthProvider();
+	const signInWithGoogle = async () => {
+		await signInWithPopup(firebaseAuth, provider).then((userCred) =>
+			firebaseAuth.onAuthStateChanged((cred) => {
+				if(cred){
+					cred.getIdToken().then((token) =>{
+						console.log(token)
+					})
+				}
+			})
+		);
+	};
 	return (
 		<div className="w-screen h-screen overflow-hidden relative flex">
 			{/* background image */}
@@ -109,6 +125,7 @@ const Login = () => {
 				<motion.div
 					{...buttonClick}
 					className="flex items-center justify-center px-20 py-2 bg-cardOverlay backdrop-blur-md rounded-3xl gap-4"
+					onClick={signInWithGoogle}
 				>
 					<FcGoogle className="text-3xl" />
 					<p className="text-base capitalize text-headingColor">
